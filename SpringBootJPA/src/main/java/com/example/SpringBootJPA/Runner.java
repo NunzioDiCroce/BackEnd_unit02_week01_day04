@@ -50,6 +50,11 @@ public class Runner implements CommandLineRunner {
 		log.info("* * * * * * * * * * FINBYIDANDUPDATE * * * * * * * * * *");
 
 		log.info("");
+
+		log.info("");
+		log.info("* * * * * * * * * * FINBYIDANDDELETE * * * * * * * * * *");
+		pizzaService.findByIdAndDelete(2);
+		log.info("");
 	}
 
 }
