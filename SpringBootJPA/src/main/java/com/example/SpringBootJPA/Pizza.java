@@ -1,6 +1,8 @@
 package com.example.SpringBootJPA;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -34,6 +36,8 @@ public class Pizza {
 	protected String fourthTopping;
 	protected double calories;
 	protected double price;
+
+	@Enumerated(EnumType.STRING)
 	protected PizzaSize pizzaSize;
 
 	public Pizza(String _name, String _firstTopping, String _secondTopping, double _calories, double _price) {
