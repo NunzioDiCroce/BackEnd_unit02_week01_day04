@@ -27,8 +27,8 @@ public class PizzasService {
 
 	}
 
-	public Optional<Pizza> findById(int _id) {
-		return iPizzasRepository.findById(_id);
+	public Pizza findById(int _id) throws ItemNotFoundException {
+		return iPizzasRepository.findById(_id).orElseThrow(() -> new ItemNotFoundException(_id));
 
 	}
 
