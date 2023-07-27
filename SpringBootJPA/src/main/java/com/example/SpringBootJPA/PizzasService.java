@@ -53,4 +53,9 @@ public class PizzasService {
 		log.info(desired.getName() + " con ID " + desired.getId() + " cancellata con successo");
 	}
 
+	public long count() {
+		return iPizzasRepository.count();
+
+	}
+
 }
