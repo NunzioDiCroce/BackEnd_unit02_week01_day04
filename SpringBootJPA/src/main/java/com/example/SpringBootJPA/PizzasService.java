@@ -1,13 +1,10 @@
 package com.example.SpringBootJPA;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import lombok.extern.slf4j.Slf4j;
 
 @Service
@@ -20,6 +17,7 @@ public class PizzasService {
 	public void save(Pizza _pizza) {
 		iPizzasRepository.save(_pizza);
 		log.info(_pizza.getName() + " con ID " + _pizza.getId() + " salvata con successo");
+
 	}
 
 	public List<Pizza> findAll() {
@@ -32,23 +30,21 @@ public class PizzasService {
 
 	}
 
-	public void findByIdAndUpdate(int _id, Pizza _pizza) {
+	public void findByIdAndUpdate(int _id, Pizza _pizza) throws ItemNotFoundException {
 		Pizza desired = this.findById(_id);
-		
-		desired.
-		
-//		private int id;
 
-//		protected String name;
-//		protected String firstTopping;
-//		protected String secondTopping;
-//		protected String thirdTopping;
-//		protected String fourthTopping;
-//		protected double calories;
-//		protected double price;
-//
-//		@Enumerated(EnumType.STRING)
-//		protected PizzaSize pizzaSize;
+		desired.setId(_id);
+		desired.setName(_pizza.getName());
+		desired.setFirstTopping(_pizza.getFirstTopping());
+		desired.setSecondTopping(_pizza.getSecondTopping());
+		desired.setThirdTopping(_pizza.getThirdTopping());
+		desired.setFourthTopping(_pizza.getFourthTopping());
+		desired.setCalories(_pizza.getCalories());
+		desired.setPrice(_pizza.getPrice());
+		desired.setPizzaSize(_pizza.getPizzaSize());
+
+		iPizzasRepository.save(desired);
+
 	}
 
 }
