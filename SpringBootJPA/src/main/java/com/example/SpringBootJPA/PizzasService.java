@@ -1,6 +1,7 @@
 package com.example.SpringBootJPA;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,11 @@ public class PizzasService {
 
 	public List<Pizza> findAll() {
 		return iPizzasRepository.findAll();
+
+	}
+
+	public Optional<Pizza> findById(int _id) {
+		return iPizzasRepository.findById(_id);
 
 	}
 
