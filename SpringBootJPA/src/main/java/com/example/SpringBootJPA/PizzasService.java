@@ -47,4 +47,10 @@ public class PizzasService {
 
 	}
 
+	public void findByIdAndDelete(int _id) {
+		Pizza desired = this.findById(_id);
+		iPizzasRepository.delete(desired);
+		log.info(desired.getName() + " con ID " + desired.getId() + " cancellata con successo");
+	}
+
 }
