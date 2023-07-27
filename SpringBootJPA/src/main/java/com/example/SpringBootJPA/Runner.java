@@ -53,7 +53,12 @@ public class Runner implements CommandLineRunner {
 
 		log.info("");
 		log.info("* * * * * * * * * * FINBYIDANDDELETE * * * * * * * * * *");
-		pizzaService.findByIdAndDelete(2);
+//		pizzaService.findByIdAndDelete(2);
+		log.info("");
+
+		log.info("");
+		log.info("* * * * * * * * * * COUNT * * * * * * * * * *");
+		log.info("Count: " + pizzaService.count());
 		log.info("");
 	}
 
