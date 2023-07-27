@@ -45,6 +45,11 @@ public class Runner implements CommandLineRunner {
 		log.info("* * * * * * * * * * FINBYID * * * * * * * * * *");
 		log.info(pizzaService.findById(102).toString());
 		log.info("");
+
+		log.info("");
+		log.info("* * * * * * * * * * FINBYIDANDUPDATE * * * * * * * * * *");
+
+		log.info("");
 	}
 
 }
