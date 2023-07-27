@@ -14,6 +14,7 @@ public class PizzasService {
 
 	public void save(Pizza _pizza) {
 		iPizzasRepository.save(_pizza);
-		log.info(_pizza.getName() + " salvata con successo");
+		log.info(_pizza.getName() + " con ID " + _pizza.getId() + " salvata con successo");
 	}
+
 }
