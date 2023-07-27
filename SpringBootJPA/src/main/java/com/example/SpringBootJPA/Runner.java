@@ -40,6 +40,11 @@ public class Runner implements CommandLineRunner {
 		log.info("* * * * * * * * * * FINDALL * * * * * * * * * *");
 		pizzaService.findAll().forEach(pizza -> log.info(pizza.toString()));
 		log.info("");
+
+		log.info("");
+		log.info("* * * * * * * * * * FINBYID * * * * * * * * * *");
+		log.info(pizzaService.findById(102).toString());
+		log.info("");
 	}
 
 }
