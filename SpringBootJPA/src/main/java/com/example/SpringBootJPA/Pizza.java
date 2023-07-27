@@ -1,11 +1,18 @@
 package com.example.SpringBootJPA;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
+
+@Entity
+@Table(name = "pizzas")
 
 @Getter
 @Setter
@@ -15,6 +22,11 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 
 public class Pizza {
+
+	@Id
+	@GeneratedValue
+	private int id;
+
 	protected String name;
 	protected String firstTopping;
 	protected String secondTopping;
