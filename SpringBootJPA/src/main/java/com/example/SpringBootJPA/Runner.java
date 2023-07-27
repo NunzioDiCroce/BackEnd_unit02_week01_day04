@@ -23,16 +23,22 @@ public class Runner implements CommandLineRunner {
 
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(SpringBootJpaApplication.class);
 
-		log.info("");
-		Pizza margherita = ctx.getBean("MargheritaPizza", Pizza.class);
 		PizzasService pizzaService = ctx.getBean(PizzasService.class);
-		pizzaService.save(margherita);
+		log.info("");
+		log.info("* * * * * * * * * * SAVE * * * * * * * * * *");
+		Pizza margherita = ctx.getBean("MargheritaPizza", Pizza.class);
+//		pizzaService.save(margherita);
 
 		Pizza hawaiian = ctx.getBean("HawaiianPizza", Pizza.class);
-		pizzaService.save(hawaiian);
+//		pizzaService.save(hawaiian);
 
 		Pizza salami = ctx.getBean("SalamiPizza", Pizza.class);
-		pizzaService.save(salami);
+//		pizzaService.save(salami);
+		log.info("");
+
+		log.info("");
+		log.info("* * * * * * * * * * FINDALL * * * * * * * * * *");
+		pizzaService.findAll().forEach(pizza -> log.info(pizza.toString()));
 		log.info("");
 	}
 
